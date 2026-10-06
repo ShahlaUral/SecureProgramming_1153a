@@ -1,7 +1,12 @@
+using CampusDocs.Api.Validations;
+using FluentValidation;
+
 var builder = WebApplication.CreateBuilder(args);
  
 
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
+
+builder.Services.AddValidatorsFromAssemblyContaining<StudentValidator>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
